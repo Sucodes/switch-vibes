@@ -1,0 +1,112 @@
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/variable";
+
+.nav {
+    @include flexCenter(row);
+    background-color: $backgroundColor;
+    justify-content: space-between;
+    padding: 1.4rem;
+    position: sticky;
+    top: 0%;
+    z-index: 3;
+    opacity: 0.8;
+
+    &_logo {
+        font-size: $fontSizeSm;
+    }
+
+    &_menu {
+        width: 2rem;
+        height: 1rem;
+        // z-index: 3;
+
+        &>div {
+            @include flexCenter(column);
+            justify-content: space-between;
+            width: inherit;
+            height: inherit;
+
+            span {
+                border: 1px solid $white;
+                width: 1.5rem;
+            }
+        }
+    }
+
+    &_links {
+        display: none;
+    }
+
+}
+
+.nav_menu__links {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 3;
+    overflow: hidden;
+    background-color: #E2B8FF;
+    // background-color: #e1d8ef;
+    width: 100vw;
+    height: 100vh;
+
+    &>div {
+        @include flexCenter(row);
+        justify-content: flex-end;
+        padding: 1.4rem;
+        padding-bottom: 0;
+
+        &>svg {
+            font-size: $fontSizeSm + 1.5rem;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        width: inherit;
+        height: 75svh;
+        @include flexCenter(column);
+
+        li {
+            cursor: pointer;
+
+            a {
+                text-decoration: none;
+                color: #6d4453;
+                font-family: $fontFamily2;
+                font-size: 3.5rem;
+            }
+        }
+    }
+}
+
+@media (min-width: $md) {
+    .nav {
+        padding: 1.6rem 3.125rem;
+    }
+}
+
+@media (min-width: $lg) {
+    .nav {
+        &_menu {
+            display: none;
+        }
+
+        &_links {
+            width: 18rem;
+            display: block;
+
+            &>ul {
+                @include flexCenter(row);
+                justify-content: space-between;
+                list-style-type: none;
+                width: inherit;
+
+                a {
+                    text-decoration: none;
+                    color: $white;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+/************ Mixins ********************/
+
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin bgImage {
+    background-image: url(../vectors/bg.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+@mixin btn {
+    background-color: transparent;
+    border: 0.0238rem solid #505050C9;
+    border-radius: 30px;
+    padding: 0.625rem 1.5625rem;
+    cursor: pointer;
+
+    &>img,
+    svg {
+        width: 5em;
+    }
+
+    &:hover {
+        background-color: #82828266;
+    }
+}

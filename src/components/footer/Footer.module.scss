@@ -1,0 +1,94 @@
+@import "../../assets/styles/mixins.scss";
+@import "../../assets/styles/variable.scss";
+
+.footer {
+    height: 80svh;
+    @include flexCenter(column);
+    background-color: $backgroundColor;
+    padding: 1.4rem;
+
+    &_question {
+        width: inherit;
+        @include flexCenter(column);
+        margin-bottom: 50px;
+
+        h1 {
+            font-size: 1.5rem;
+            margin: 30px 0px;
+        }
+
+        button {
+            @include btn;
+            background-color: $purple;
+            color: $white;
+        }
+    }
+
+    &_links {
+        margin-top: 30px;
+
+        &>ul {
+            width: 200px;
+            @include flexCenter(row);
+            justify-content: space-between;
+            align-items: flex-start;
+            font-size: $fontSizeSm - .3rem;
+            list-style-type: none;
+            font-family: $fontFamily2;
+
+            &>li {
+                &>a {
+                    color: $white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &>hr {
+        color: #71777D;
+        width: 100%;
+        margin-top: 80px;
+    }
+}
+
+@media (min-width: $md) {
+    .footer {
+        &_question {
+            width: 100%;
+
+            h1 {
+                font-size: 3rem;
+                margin: 30px 0px;
+            }
+
+            button {
+                @include btn;
+                background-color: $purple;
+                width: 150px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+}
+
+@media (min-width: $lg) {
+    .footer {
+        padding: 0px 50px;
+        height: 90svh;
+
+        &_question {
+            width: 100%;
+            @include flexCenter(row);
+            justify-content: space-around;
+            margin-bottom: 50px;
+
+            button {
+                width: 250px;
+                font-weight: 400;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

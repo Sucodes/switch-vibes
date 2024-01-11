@@ -1,0 +1,236 @@
+@import "../../assets/styles/mixins.scss";
+@import "../../assets/styles/variable.scss";
+
+.header {
+    height: 100svh;
+    padding: 1.4rem;
+    @include bgImage;
+    background-color: $backgroundColor;
+
+    &_form {
+        margin: 1.25rem 0rem;
+        margin-top: 50px;
+        width: inherit;
+        @include flexCenter(column);
+        justify-content: center;
+        height: 60px;
+
+        &_input {
+            border: 1px solid #505050C9;
+            border-radius: 0.25rem;
+            width: 100%;
+            max-width: 37.5rem;
+            height: 2.5rem;
+            background-color: transparent;
+            padding: 0rem 0.625rem;
+            color: $placeholderColor;
+
+            &::placeholder {
+                color: $placeholderColor;
+                font-size: $fontSizeSm - 0.4rem;
+            }
+
+            &:focus {
+                box-shadow: 2px 2px 8px #505050C9;
+                outline: none;
+                background-color: none;
+            }
+        }
+
+        &>span {
+            text-align: left;
+            width: 100%;
+            max-width: 37.5rem;
+            color: rgb(185, 11, 46);
+            font-size: 13px;
+            margin-top: 5px;
+        }
+    }
+
+    &_buttons {
+        margin-top: 1.25rem;
+        height: 25rem;
+        @include flexCenter(column);
+        justify-content: space-evenly;
+
+        &__top_layer {
+            width: 100%;
+            display: contents;
+
+            button {
+                @include btn;
+            }
+        }
+
+        &__middle_layer {
+            width: 100%;
+            @include flexCenter(row);
+
+            button {
+                color: $white;
+                @include btn;
+                background-color: $purple;
+                z-index: 2;
+            }
+
+            &__div {
+                width: calc(50px + 5%);
+                height: 100%;
+                @include flexCenter(row);
+
+                &_img3 {
+                    height: 100px;
+                    position: absolute;
+                    left: calc(10px + 5%);
+                    transform: rotate(-20deg);
+                }
+
+                &_img4 {
+                    height: 100px;
+                    position: absolute;
+                    transform: rotate(-15deg);
+                    left: calc(28px + 5%);
+                }
+
+                &_img5 {
+                    height: 100px;
+                    position: absolute;
+                    right: calc(10px + 5%);
+                    transform: rotate(20deg);
+                }
+
+                &_img6 {
+                    height: 100px;
+                    position: absolute;
+                    right: calc(28px + 5%);
+                    transform: rotate(15deg);
+                }
+            }
+        }
+
+        &__bottom_layer {
+            width: 100%;
+            max-width: 600px;
+            @include flexCenter(row);
+            justify-content: space-between;
+
+            button {
+                @include btn;
+            }
+
+            &>div {
+                @include flexCenter(column);
+                justify-content: space-between;
+                gap: 0.2rem;
+                margin: 0px 5px;
+
+                &>img {
+                    width: 100%;
+                    height: 1em;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $md) {
+    .header {
+        &_form {
+            &_input {
+                max-width: 37.5rem;
+            }
+        }
+
+        &_buttons {
+            &__top_layer {
+                button {
+                    @include btn;
+
+                    &>img {
+                        width: 5rem;
+
+                    }
+                }
+            }
+
+            &__middle_layer {
+                button {
+                    font-size: .9rem;
+                }
+
+                &__div {
+                    &_img3 {
+                        left: calc(100px + 10%);
+                        transform: rotate(-8deg);
+                    }
+
+                    &_img4 {
+                        left: calc(30px + 15%);
+                        transform: rotate(-12deg);
+                    }
+
+                    &_img5 {
+                        right: calc(100px + 10%);
+                        transform: rotate(8deg);
+                    }
+
+                    &_img6 {
+                        right: calc(30px + 15%);
+                        transform: rotate(12deg);
+                    }
+                }
+            }
+
+            &__bottom_layer {
+                button {
+                    @include btn;
+
+                    &>img {
+                        width: 5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $lg) {
+    .header {
+        &_buttons {
+            height: 28rem;
+            margin: 0 auto;
+
+            &__middle_layer {
+                &__div {
+                    position: absolute;
+                    height: 30px;
+
+                    &_img3 {
+                        height: 130px;
+                        left: calc(-180px + 10%);
+                        transform: rotate(-8deg);
+                    }
+
+                    &_img4 {
+                        height: 130px;
+                        left: calc(-200px + 10%);
+                        transform: rotate(-10deg);
+                    }
+
+                    &_img5 {
+                        height: 130px;
+                        right: calc(-200px + 26%);
+                        transform: rotate(10deg);
+                    }
+
+                    &_img6 {
+                        height: 120px;
+                        right: calc(-220px + 26%);
+                        transform: rotate(12deg);
+                    }
+                }
+            }
+        }
+    }
+}

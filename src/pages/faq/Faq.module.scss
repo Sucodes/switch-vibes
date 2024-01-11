@@ -1,0 +1,121 @@
+@import "../../assets/styles/mixins.scss";
+@import "../../assets/styles/variable.scss";
+
+.faq {
+    background-color: $backgroundColor;
+    @include bgImage;
+    padding: 1.4rem;
+    color: $accordionColor;
+    padding-bottom: 200px;
+
+    h1 {
+        color: $purple;
+        font-size: $fontSizeMd;
+        text-align: center;
+    }
+
+    &_question {
+        letter-spacing: 0.3px;
+        word-spacing: 0px;
+        font-weight: 400;
+        padding: 10px 0px;
+        padding-top: 0px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: left;
+
+        &_card {
+            text-align: left;
+
+            &>div {
+                @include flexCenter(column);
+                justify-content: space-between;
+                padding: 15px 10px;
+                cursor: pointer;
+                text-align: left;
+
+                &>div {
+                    text-align: left;
+
+                    &>h4 {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        margin-bottom: 30px;
+                        @include flexCenter(row);
+                        justify-content: space-between;
+                    }
+
+                    &>hr {
+                        margin-top: 70px;
+                    }
+                }
+
+                &>div {
+                    text-align: left;
+
+                    p {
+                        margin-top: 30px;
+                        font-size: 16px;
+                        text-align: left;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $md) {
+    .faq {
+        margin-bottom: 0px;
+
+        &_question {
+            height: 500px;
+
+            &_card {
+                &>div {
+                    &>div {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $lg) {
+    .faq {
+        padding: 0px 50px;
+        height: 100svh;
+
+        &_question {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+
+            &_card {
+                text-align: left;
+
+                &>div {
+                    @include flexCenter(column);
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    padding: 15px 10px;
+                    cursor: pointer;
+                    text-align: left;
+
+                    &>div {
+                        text-align: left;
+                        width: 100%;
+
+                        &>h4 {
+                            font-size: 1rem;
+                            font-weight: 500;
+                            margin-bottom: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

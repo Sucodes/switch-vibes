@@ -1,0 +1,115 @@
+@import "../../assets/styles/mixins.scss";
+@import "../../assets/styles/variable.scss";
+
+.perks {
+    padding: 1.4rem;
+    padding-bottom: 150px;
+    @include bgImage;
+    background-color: $backgroundColor;
+
+    h1 {
+        color: $purple;
+        font-size: $fontSizeMd;
+        margin: 20px 0px;
+        text-align: center;
+    }
+
+    &_div {
+        height: auto;
+        @include flexCenter(column);
+        overflow: hidden;
+        margin: 0;
+        position: relative;
+
+        &_div {
+            background: $cardLinearGradient;
+            border: 1px solid $iconColor;
+            width: 200px;
+            height: 200px;
+            border-radius: 20%;
+            padding: 20px;
+            text-align: center;
+            margin: 20px;
+            color: $accordionColor;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        &_modal {
+            width: 100%;
+            height: 300px;
+            max-width: 500px;
+            border-radius: 10px;
+            z-index: 2;
+            @include flexCenter(row);
+            background-color: #E2B8FF;
+            position: absolute;
+            top: 35%;
+            padding: 1.4rem;
+            cursor: pointer;
+
+            &>div {
+                height: 100%;
+                @include flexCenter(column);
+                justify-content: space-between;
+                align-items: flex-start;
+
+                &>span {
+                    width: 100%;
+                    text-align: right;
+
+                    svg {
+                        font-size: 30px;
+                    }
+                }
+
+                &>h3 {
+                    color: $purple;
+                    text-decoration: underline;
+                }
+
+                &>p {
+                    height: 60%;
+                    color: $purple;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $md) {
+    .perks {
+        &_div {
+            // height: auto;
+            @include flexCenter(row);
+            margin: 0 auto;
+            max-width: 500px;
+            flex-wrap: wrap;
+
+            &_modal {
+                top: 25%;
+            }
+        }
+    }
+}
+
+@media (min-width: $lg) {
+    .perks {
+        padding: 0px 50px;
+        margin-bottom: 50px;
+        height: 100svh;
+
+        h1 {
+            margin-bottom: 50px;
+            margin-top: 0px;
+        }
+
+        &_div {
+            max-width: 800px;
+            // border: 1px solid $iconColor;
+            box-shadow: 2px 2px 8px #505050C9;
+            border-radius: 50px;
+            padding: 1.4rem 0rem;
+        }
+    }
+}

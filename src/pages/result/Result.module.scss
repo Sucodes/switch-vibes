@@ -1,0 +1,149 @@
+@import "../../assets/styles/mixins.scss";
+@import "../../assets/styles/variable.scss";
+
+.result {
+    @include flexCenter(column);
+    justify-content: space-evenly;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background-color: #000212;
+    @include bgImage;
+
+    &_close {
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        padding-right: 1rem;
+        padding-top: 1rem;
+        cursor: pointer;
+
+        &>svg {
+            font-size: $fontSizeSm + .8rem;
+        }
+    }
+
+    h2 {
+        width: inherit;
+
+        @media (max-width: 375px) {
+            font-size: $fontSizeSm;
+        }
+    }
+
+    &_track {
+        width: 18.75rem;
+        color: $white;
+        @include flexCenter(column);
+        justify-content: space-between;
+        background-color: $backgroundColor;
+        height: 500px;
+        max-width: 500px;
+        border-radius: 0.625rem;
+        opacity: 0.5;
+        background-color: #38252c;
+
+        &>nav {
+            width: inherit;
+
+            &>ul {
+                @include flexCenter(row);
+                justify-content: space-between;
+                border-bottom: .5px solid $placeholderColor;
+
+                li {
+                    list-style-type: none;
+                    padding: 15px;
+                    cursor: pointer;
+                    width: 100px;
+                    text-align: center;
+                }
+            }
+        }
+
+        &__div {
+            height: 100%;
+            @include flexCenter(column);
+            justify-content: space-between;
+
+            h3 {
+                color: $purple;
+                font-size: $fontSizeSm;
+                margin-top: 1.25rem;
+                text-align: center;
+                cursor: pointer;
+                @include flexCenter(row);
+            }
+
+            &>ul {
+                list-style-type: none;
+                width: inherit;
+                @include flexCenter(column);
+                justify-content: space-between;
+                align-items: flex-start;
+                padding: 1.4rem;
+                height: 60%;
+
+                li {
+                    width: 100%;
+                    @include flexCenter(row);
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    span {
+                        margin-left: 0.625rem;
+                    }
+                }
+
+                &>span {
+                    width: 100%;
+                    text-align: right;
+
+                }
+            }
+
+            button {
+                @include btn;
+                background-color: $purple;
+                margin-bottom: 1.4rem;
+                border-radius: 50%;
+                @include flexCenter(row);
+
+                a {
+                    text-decoration: none;
+                    color: $white;
+                    width: inherit;
+                    margin: 0.625rem 0.3125rem;
+
+                    svg {
+                        width: 1.25rem;
+                        font-size: 1.875rem;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $md) {
+    .result {
+        &_close {
+            padding-right: 1.4rem;
+            padding-top: 1.4rem;
+
+            &>svg {
+                font-size: $fontSizeSm + 1.5rem;
+            }
+        }
+
+        &_track {
+            width: 21rem;
+            height: 34.375rem;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
+/************ Font ********************/
+
+$fontFamily: 'Inter', 'sans-serif';
+$fontFamily2: "jost";
+$fontSizeSm: 1.1rem;
+$fontSizeMd: 3rem;
+$fontSizeLg: 5rem;
+
+/************ Colors ********************/
+
+$backgroundColor: #000212;
+$NavTextColor: #D7D7D7;
+$textColor: #282B39;
+$accordionColor: #EBFBFE;
+$placeholderColor: #707070;
+$purple: #7F61FF;
+$white: #FFFFFF;
+$black: #000000;
+$iconColor: #4d4d4e;
+$btnLinearGradient: linear-gradient(190.59deg, rgba(80, 80, 80, 0.79) -0.98%, rgba(130, 130, 130, 0.4) 103.11%);
+$cardLinearGradient: #121526;
+
+/********** media queries **************/
+
+$sm: 550px;
+$md: 768px;
+$lg: 1024px;

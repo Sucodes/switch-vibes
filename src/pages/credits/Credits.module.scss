@@ -1,0 +1,128 @@
+@import "../../assets/styles/mixins.scss";
+@import "../../assets/styles/variable.scss";
+
+.credits {
+    background-color: $backgroundColor;
+    padding: 1.4rem;
+
+    h1 {
+        color: $purple;
+        font-size: $fontSizeMd;
+        margin: 30px 0px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    &_card {
+        color: $white;
+        @include flexCenter(column);
+        justify-content: space-between;
+
+        &__front {
+            border: 1px solid $placeholderColor;
+            border-radius: 20px;
+            padding: 50px;
+            height: 300px;
+            width: 17.5em;
+            background-color: $cardLinearGradient;
+            @include flexCenter(column);
+            margin: 20px 0px;
+            cursor: pointer;
+
+            &>img {
+                width: 150px;
+            }
+
+            &>div {
+                @include flexCenter(column);
+                justify-content: space-around;
+                margin-top: 20px;
+
+                &>h3 {
+                    font-weight: 500;
+                    font-size: 15px;
+                }
+
+                &>p {
+                    margin-top: 10px;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        &__back {
+            @extend .credits_card__front;
+            justify-content: center;
+
+            &>ul {
+                width: 95px;
+                display: flex;
+                flex-wrap: wrap;
+                height: 100px;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 10px;
+                gap: 10px;
+
+                li {
+                    list-style-type: none;
+                    text-decoration: none;
+                    border-bottom: 1px solid $placeholderColor;
+                    padding: 5px;
+                    box-shadow: $purple 0px 10px 15px -15px;
+
+                    a {
+                        color: $white;
+
+                        &>svg {
+                            font-size: $fontSizeSm + .4;
+                        }
+
+                        &:hover {
+                            color: $purple;
+                        }
+                    }
+
+                    &:hover {
+                        border-bottom: 1px solid $purple;
+                        box-shadow: $placeholderColor 0px 10px 15px -8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $md) {
+    .credits {
+        height: 800px;
+        @include flexCenter(column);
+
+        &_card {
+            @include flexCenter(row);
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: $lg) {
+    .credits {
+        height: auto;
+        padding: 0px 50px;
+        justify-content: space-evenly;
+
+        h1 {
+            width: 100%;
+            margin-top: 0px;
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        &_card {
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+        }
+    }
+}

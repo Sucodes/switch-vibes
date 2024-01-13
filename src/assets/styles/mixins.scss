@@ -23,6 +23,7 @@
     &>img,
     svg {
         width: 5em;
+        object-fit: contain;
     }
 
     &:hover {

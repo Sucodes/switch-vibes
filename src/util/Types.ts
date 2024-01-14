@@ -11,3 +11,8 @@ export type ResultArray = {
   content: JSX.Element;
   subheading: string;
 }[];
+
+export type FallBackProps = {
+  error: any;
+  resetErrorBoundary: any;
+};

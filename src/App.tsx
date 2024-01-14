@@ -1,15 +1,21 @@
+import FallBack from "./components/fallback/FallBack";
+import Context from "./context/Context";
 import Layout from "./layout/Layout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import Context from "./context/Context";
 import { ToastContainer } from "react-toastify";
+import { ErrorBoundary } from "react-error-boundary";
 import "react-toastify/dist/ReactToastify.css";
-import ErrorBoundary from "./components/ErrorBoundary";
 
 const queryClient = new QueryClient();
 
 function App() {
+  const errorHandler = (error: any, info: React.ErrorInfo) => {
+    console.log(error);
+    console.log(info);
+  };
+
   return (
-    <ErrorBoundary>
+    <ErrorBoundary FallbackComponent={FallBack} onError={errorHandler}>
       <QueryClientProvider client={queryClient}>
         <ToastContainer
           position="bottom-center"

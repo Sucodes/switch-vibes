@@ -25,6 +25,7 @@ import Result from "../result/Result";
 import { ResultContext } from "../../context/Context";
 import { arrowVariants } from "../../util/FramerVariants";
 import styles from "./Header.module.scss";
+import { useErrorBoundary } from "react-error-boundary";
 
 const Header = () => {
   const [link, setLink] = useState<boolean>(false);
@@ -38,6 +39,8 @@ const Header = () => {
   const [btnValue, setBtnValue] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const { result, setResult, setResultData } = useContext(ResultContext);
+
+  const { showBoundary } = useErrorBoundary();
 
   const checkUrl = (e: any) => {
     e.preventDefault();
@@ -116,19 +119,17 @@ const Header = () => {
           });
           setResultData(res?.data);
           toast.success("Success!");
+          setLinkString("");
           setResult(true);
           setIsLoading(false);
         }
       } catch (error: any) {
         console.log(error);
-        console.log(error?.response?.data[0]);
-        error?.message === "Network Error" && toast.error(error?.message);
-        error?.response?.status === 400 &&
-          toast.error(error?.response?.data?.error[0]);
-        error?.response?.status === 404 &&
-          toast.error(error?.response?.data?.error[0]);
-        error?.response?.status === 500 &&
-          toast.error("An error occurred. Please try again.");
+        error?.message === "Network Error" && showBoundary(error);
+        (error?.response?.status === 400 || error?.response?.status === 404) &&
+          showBoundary(error);
+        error?.response?.status === 500 && showBoundary(error);
+        // toast.error("An error occurred. Please try again.");
         setIsLoading(false);
       }
     } else if (linkString !== "" && btnValue.join("_to_") === "") {
@@ -150,6 +151,7 @@ const Header = () => {
           id="url"
           name="url"
           type="url"
+          value={linkString}
           onChange={(e: any) => checkUrl(e)}
           placeholder="Paste playlist URL"
         />
@@ -166,7 +168,7 @@ const Header = () => {
           <>
             <div className={styles.header_buttons__top_layer}>
               <button
-                onClick={() => {
+                onClick={(e) => {
                   handleClick("yt");
                 }}
               >
@@ -218,7 +220,7 @@ const Header = () => {
 
             <div className={styles.header_buttons__bottom_layer}>
               <button
-                onClick={() => {
+                onClick={(e) => {
                   handleClick("apple");
                 }}
               >
@@ -245,7 +247,7 @@ const Header = () => {
               </div>
 
               <button
-                onClick={() => {
+                onClick={(e) => {
                   handleClick("spotify");
                 }}
               >

@@ -14,7 +14,7 @@
         @include flexCenter(row);
 
         &>img {
-            object-fit: cover;
+            // object-fit: cover;
             width: inherit;
             height: 350px;
             border-radius: 33px;

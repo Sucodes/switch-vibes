@@ -36,7 +36,7 @@ const Credits = () => {
               onClick={() => cardFlip(index)}
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ once: true, amount: 0.8 }}
+              viewport={{ once: true, amount: 0.3 }}
               animate={{
                 rotateY: selectId === index ? 180 : 360,
               }}

@@ -27,7 +27,7 @@ const Faq = () => {
                 onClick={() => toggle(index)}
                 initial="offscreen"
                 whileInView="onscreen"
-                viewport={{ once: true, amount: 0.8 }}
+                viewport={{ once: true, amount: 0.4 }}
                 variants={faqVariants}
               >
                 <div>

@@ -33,6 +33,7 @@ const Footer = () => {
             );
           })}
         </ul>
+        <p>&copy;{new Date().getFullYear()}. All Rights Reserved. </p>
       </div>
     </section>
   );

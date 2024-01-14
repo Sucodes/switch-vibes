@@ -25,7 +25,7 @@ const Perks = () => {
         variants={perksContainer}
         initial="offscreen"
         whileInView="onscreen"
-        viewport={{ once: true, amount: 0.8 }}
+        viewport={{ once: true, amount: 1 }}
         className={styles.perks_div}
       >
         {perkData.map((element: any, index: number) => {

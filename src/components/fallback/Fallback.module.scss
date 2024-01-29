@@ -1,5 +1,5 @@
-@import "../../assets/styles/mixins.scss";
-@import "../../assets/styles/variable.scss";
+@import "assets/styles/mixins.scss";
+@import "assets/styles/variable.scss";
 
 .fallback {
     background-color: $backgroundColor;
@@ -47,11 +47,6 @@
                 @include flexCenter(row);
                 color: $white;
                 margin-top: 10px;
-
-                &>svg {
-                    margin-right: 5px;
-                    width: auto;
-                }
             }
         }
     }

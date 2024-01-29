@@ -1,0 +1,50 @@
+@import "assets/styles/mixins.scss";
+@import "assets/styles/variable.scss";
+
+.header_form {
+    margin: 1.25rem 0rem;
+    margin-top: 50px;
+    width: inherit;
+    @include flexCenter(column);
+    justify-content: center;
+    height: 60px;
+
+    &_input {
+        border: 1px solid #505050C9;
+        border-radius: 0.25rem;
+        width: 100%;
+        max-width: 37.5rem;
+        height: 2.5rem;
+        background-color: transparent;
+        padding: 0rem 0.625rem;
+        color: $placeholderColor;
+
+        &::placeholder {
+            color: $placeholderColor;
+            font-size: $fontSizeSm - 0.4rem;
+        }
+
+        &:focus {
+            box-shadow: 2px 2px 8px #505050C9;
+            outline: none;
+            background-color: none;
+        }
+    }
+
+    &>span {
+        text-align: left;
+        width: 100%;
+        max-width: 37.5rem;
+        color: rgb(185, 11, 46);
+        font-size: 13px;
+        margin-top: 5px;
+    }
+}
+
+@media (min-width: $md) {
+    .header_form {
+        &_input {
+            max-width: 37.5rem;
+        }
+    }
+}

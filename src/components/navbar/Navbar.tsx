@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { logo } from "../../assets/assetPath";
-import { IoCloseOutline } from "react-icons/io5";
-import styles from "./Navbar.module.scss";
-import { motion } from "framer-motion";
-import { navbarContainer, navbarItem } from "../../util/FramerVariants";
+import { logo } from "assets/assetPath";
+import { motion, IoCloseOutline } from "components/common/ExternalComponents";
+import styles from "components/navbar/Navbar.module.scss";
+import { navbarContainer, navbarItem } from "util/variants/FramerVariants";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);

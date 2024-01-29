@@ -1,5 +1,5 @@
-@import "../../assets/styles/mixins";
-@import "../../assets/styles/variable";
+@import "assets/styles/mixins.scss";
+@import "assets/styles/variable.scss";
 
 .nav {
     @include flexCenter(row);

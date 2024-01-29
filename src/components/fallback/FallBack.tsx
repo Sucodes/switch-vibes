@@ -1,7 +1,7 @@
-import { FallBackProps } from "../../util/Types";
-import styles from "./Fallback.module.scss";
-import { CiRedo } from "react-icons/ci";
-import { logo } from "../../assets/assetPath";
+import { logo } from "assets/assetPath";
+import styles from "components/fallback/Fallback.module.scss";
+import { FallBackProps } from "util/types/Others";
+import { queryClient } from "index";
 
 const FallBack = ({ error, resetErrorBoundary }: FallBackProps) => {
   let err = error?.response?.data?.error;
@@ -24,8 +24,16 @@ const FallBack = ({ error, resetErrorBoundary }: FallBackProps) => {
         </h3>
         <p>Looks like something went wrong.</p>
         <div>
-          <button onClick={resetErrorBoundary}>
-            <CiRedo />
+          <button
+            onClick={() => {
+              //removes query from cache so it does not rerender
+              queryClient.removeQueries({
+                queryKey: ["ConvertPlaylist"],
+                exact: true,
+              });
+              resetErrorBoundary(); //unmounts the error boundary
+            }}
+          >
             Try Again
           </button>
         </div>

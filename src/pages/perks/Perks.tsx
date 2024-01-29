@@ -1,11 +1,13 @@
 import { useRef, useState } from "react";
-import styles from "./Perks.module.scss";
-import { motion } from "framer-motion";
-import { FaCheck } from "react-icons/fa";
-import { logo } from "../../assets/assetPath";
-import { perkData } from "../../util/Content";
-import { perksContainer, perksItem } from "../../util/FramerVariants";
-import { IoCloseOutline } from "react-icons/io5";
+import {
+  FaCheck,
+  IoCloseOutline,
+  motion,
+} from "components/common/ExternalComponents";
+import styles from "pages/perks/Perks.module.scss";
+import { logo } from "assets/assetPath";
+import { perkData } from "util/content/Content";
+import { perksContainer, perksItem } from "util/variants/FramerVariants";
 
 const Perks = () => {
   const constraintsRef = useRef(null);

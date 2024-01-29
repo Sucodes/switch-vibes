@@ -1,12 +1,11 @@
 import { useContext } from "react";
-import { motion } from "framer-motion";
-import { TiCancel } from "react-icons/ti";
-import { ResultContext } from "../context/Context";
-import { navbarContainer, navbarItem } from "../util/FramerVariants";
+import { motion, TiCancel } from "components/common/ExternalComponents";
+import { ResultContext } from "hooks/context/Context";
+import { navbarContainer, navbarItem } from "util/variants/FramerVariants";
 
 const NotFoundDisplay = () => {
-  const { resultData } = useContext(ResultContext);
-  const { nulls } = resultData;
+  const { data } = useContext(ResultContext);
+  const { nulls } = data.data;
 
   return (
     <motion.ul variants={navbarContainer} initial="hidden" animate="visible">

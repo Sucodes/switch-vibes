@@ -1,12 +1,11 @@
 import { useContext } from "react";
-import { motion } from "framer-motion";
-import { navbarContainer, navbarItem } from "../util/FramerVariants";
-import { FaCheck } from "react-icons/fa";
-import { ResultContext } from "../context/Context";
+import { FaCheck, motion } from "components/common/ExternalComponents";
+import { ResultContext } from "hooks/context/Context";
+import { navbarContainer, navbarItem } from "util/variants/FramerVariants";
 
 const TrackDisplay = () => {
-  const { resultData } = useContext(ResultContext);
-  const { playlist } = resultData;
+  const { data } = useContext(ResultContext);
+  const { playlist } = data.data;
 
   return (
     <motion.ul variants={navbarContainer} initial="hidden" animate="visible">

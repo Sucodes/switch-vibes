@@ -1,12 +1,11 @@
 import { useContext } from "react";
-import { motion } from "framer-motion";
-import { FaFlag } from "react-icons/fa";
-import { ResultContext } from "../context/Context";
-import { navbarContainer, navbarItem } from "../util/FramerVariants";
+import { FaFlag, motion } from "components/common/ExternalComponents";
+import { ResultContext } from "hooks/context/Context";
+import { navbarContainer, navbarItem } from "util/variants/FramerVariants";
 
 const FlaggedDisplay = () => {
-  const { resultData } = useContext(ResultContext);
-  const { flagged } = resultData;
+  const { data } = useContext(ResultContext);
+  const { flagged } = data.data;
 
   return (
     <motion.ul variants={navbarContainer} initial="hidden" animate="visible">

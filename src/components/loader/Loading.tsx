@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { ScaleLoader } from "react-spinners";
-import AnimatedText from "../animationFunc/AnimatedText";
+import AnimatedText from "components/animationFunc/AnimatedText";
+import { ScaleLoader } from "components/common/ExternalComponents";
 
 const Loading = () => {
   const [count, setCount] = useState(0);

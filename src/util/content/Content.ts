@@ -1,6 +1,11 @@
-import { uche, susu, feranmi } from "../assets/assetPath";
+import { uche, susu, feranmi } from "assets/assetPath";
+import {
+  CardDataProps,
+  OtherProps,
+  PerkDataProps,
+} from "util/types/ContentTypes";
 
-export const aboutData = [
+export const aboutData: OtherProps[] = [
   {
     title: "Intelligent Song Matching:",
     text: "Our intelligent track matching algorithms ensure precise track finding, preserving the integrity of your playlists during the migration process.",
@@ -19,7 +24,7 @@ export const aboutData = [
   },
 ];
 
-export const perkData = [
+export const perkData: PerkDataProps[] = [
   {
     heading: "Faster runtime",
     subheading:
@@ -52,7 +57,7 @@ export const perkData = [
   },
 ];
 
-export const faqData = [
+export const faqData: OtherProps[] = [
   {
     title:
       "Why are some tracks not found on the destination streaming platform?",
@@ -72,7 +77,7 @@ export const faqData = [
   },
 ];
 
-export const cardData = [
+export const cardData: CardDataProps[] = [
   {
     image: uche,
     title: "Onyenso Uchenna",

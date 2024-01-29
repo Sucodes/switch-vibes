@@ -1,8 +1,8 @@
-import Faq from "../faq/Faq";
-import Credits from "../credits/Credits";
-import About from "../about/About";
-import Perks from "../perks/Perks";
-import Header from "../header/Header";
+import Faq from "pages/faq/Faq";
+import Credits from "pages/credits/Credits";
+import About from "pages/about/About";
+import Perks from "pages/perks/Perks";
+import Header from "pages/header/Header";
 
 const Home = () => {
   return (

@@ -1,4 +1,4 @@
-import { toast } from "react-toastify";
+import { toast } from "components/common/ExternalComponents";
 
 export const copyContent = async (link: string) => {
   try {

@@ -1,21 +1,26 @@
 import { useContext, useState } from "react";
-import { IoCloseOutline } from "react-icons/io5";
-import { FaCopy, FaPause, FaPlay } from "react-icons/fa";
-import { AnimatePresence, motion } from "framer-motion";
-import AnimatedText from "../../components/animationFunc/AnimatedText";
-import TrackDisplay from "../../components/TrackDisplay";
-import FlaggedDisplay from "../../components/FlaggedDisplay";
-import NotFoundDisplay from "../../components/NotFoundDisplay";
-import { ResultArray } from "../../util/Types";
-import { ResultContext } from "../../context/Context";
-import { copyContent } from "../../util/ClipboardFn";
-import styles from "./Result.module.scss";
+import {
+  AnimatePresence,
+  FaCopy,
+  FaPause,
+  FaPlay,
+  IoCloseOutline,
+  motion,
+} from "components/common/ExternalComponents";
+import AnimatedText from "components/animationFunc/AnimatedText";
+import TrackDisplay from "components/displayResult/TrackDisplay";
+import FlaggedDisplay from "components/displayResult/FlaggedDisplay";
+import NotFoundDisplay from "components/displayResult/NotFoundDisplay";
+import styles from "pages/result/Result.module.scss";
+import { ResultContext } from "hooks/context/Context";
+import { copyContent } from "util/helperFns/ClipboardFn";
+import { ResultArray } from "util/types/Others";
 
-const Result = () => {
+const Result = ({ setResult }: any) => {
   const [changeIcon, setChangeIcon] = useState(false);
   const [selectedTab, setSelectedTab] = useState(resultViews[0]);
-  const { setResult, resultData } = useContext(ResultContext);
-  const { link } = resultData;
+  const { data } = useContext(ResultContext);
+  const { link } = data.data;
 
   return (
     <div className={styles.result}>
@@ -86,7 +91,7 @@ const Result = () => {
 
 export default Result;
 
-export const resultViews: ResultArray = [
+const resultViews: ResultArray = [
   {
     label: "Tracks",
     content: <TrackDisplay />,

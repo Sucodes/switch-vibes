@@ -1,10 +1,15 @@
 import { useState } from "react";
-import styles from "./Credits.module.scss";
-import { motion } from "framer-motion";
-import { FaTwitter, FaGithub, FaBehance, FaLinkedinIn } from "react-icons/fa";
-import { MdOutlineMailOutline } from "react-icons/md";
-import { cardData } from "../../util/Content";
-import { faqVariants } from "../../util/FramerVariants";
+import {
+  FaBehance,
+  FaGithub,
+  FaLinkedinIn,
+  FaTwitter,
+  MdOutlineMailOutline,
+  motion,
+} from "components/common/ExternalComponents";
+import styles from "pages/credits/Credits.module.scss";
+import { cardData } from "util/content/Content";
+import { faqVariants } from "util/variants/FramerVariants";
 
 const Credits = () => {
   const [isAnimating, setIsAnimating] = useState(false);

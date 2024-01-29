@@ -1,14 +1,18 @@
-import React, { Fragment, useState, useRef } from "react";
-import styles from "./About.module.scss";
-import { aboutPhoto } from "../../assets/assetPath";
-import { useInView, motion, AnimatePresence } from "framer-motion";
-import { aboutData } from "../../util/Content";
-import { wrap } from "popmotion";
-import { aboutVariants } from "../../util/FramerVariants";
+import { Fragment, useState, useRef } from "react";
+import { aboutPhoto } from "assets/assetPath";
+import {
+  AnimatePresence,
+  motion,
+  useInView,
+  wrap,
+} from "components/common/ExternalComponents";
+import styles from "pages/about/About.module.scss";
+import { aboutData } from "util/content/Content";
+import { aboutVariants } from "util/variants/FramerVariants";
 import {
   swipeConfidenceThreshold,
   swipePower,
-} from "../../util/FramerVariants";
+} from "util/variants/FramerVariants";
 
 const About = () => {
   const ref = useRef(null);

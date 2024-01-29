@@ -1,8 +1,8 @@
 import { useState } from "react";
-import styles from "./Faq.module.scss";
-import { motion } from "framer-motion";
-import { faqVariants } from "../../util/FramerVariants";
-import { faqData } from "../../util/Content";
+import { motion } from "components/common/ExternalComponents";
+import styles from "pages/faq/Faq.module.scss";
+import { faqVariants } from "util/variants/FramerVariants";
+import { faqData } from "util/content/Content";
 
 const Faq = () => {
   const [selectedId, setSelectedId] = useState<null | number>(null);

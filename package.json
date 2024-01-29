@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@tanstack/react-query": "^5.12.2",
+    "@tanstack/react-query-devtools": "^5.17.21",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -21,7 +22,6 @@
     "react-error-boundary": "^4.0.12",
     "react-icons": "^4.11.0",
     "react-query": "^3.39.3",
-    "react-router-dom": "^6.21.2",
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.8",
     "react-toastify": "^9.1.3",

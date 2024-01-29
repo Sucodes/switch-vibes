@@ -1,6 +1,5 @@
-import React from "react";
-import styles from "./Footer.module.scss";
-import { motion } from "framer-motion";
+import { motion } from "components/common/ExternalComponents";
+import styles from "components/footer/Footer.module.scss";
 
 const Footer = () => {
   const listItems: string[] = ["About", "Perks", "FAQs", "Credits"];

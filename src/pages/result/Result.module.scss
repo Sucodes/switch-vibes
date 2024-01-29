@@ -1,5 +1,5 @@
-@import "../../assets/styles/mixins.scss";
-@import "../../assets/styles/variable.scss";
+@import "assets/styles/mixins.scss";
+@import "assets/styles/variable.scss";
 
 .result {
     @include flexCenter(column);
@@ -69,6 +69,7 @@
             height: 100%;
             @include flexCenter(column);
             justify-content: space-between;
+            width: inherit;
 
             h3 {
                 color: $purple;

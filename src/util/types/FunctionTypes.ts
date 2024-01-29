@@ -13,12 +13,10 @@ export type UpdateProps = {
   state: HighlightArrowProps;
   dispatch: React.Dispatch<any>;
   refetch?: any;
-  setLinkString?: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export type UrlCheckerProps = {
   e: React.ChangeEvent<HTMLInputElement>;
-  link: boolean;
   setLink: React.Dispatch<React.SetStateAction<boolean>>;
   setLinkString: React.Dispatch<React.SetStateAction<string>>;
 };

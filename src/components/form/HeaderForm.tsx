@@ -3,11 +3,11 @@ import styles from "components/form/HeaderForm.module.scss";
 import { ResultContext } from "hooks/context/Context";
 import { UrlCheckerProps } from "util/types/FunctionTypes";
 
-const checkUrl = ({ e, link, setLink, setLinkString }: UrlCheckerProps) => {
+const checkUrl = ({ e, setLink, setLinkString }: UrlCheckerProps) => {
   e.preventDefault();
   setLinkString(e.target.value);
-  const urlRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
-  urlRegex.test(e.target.value) && setLink(!link);
+  const urlRegex = /^(https?):\/\/[^\s/$.?#].[^\s]*$/i;
+  urlRegex.test(e.target.value) && setLink(true);
 };
 
 const HeaderForm = () => {
@@ -15,7 +15,10 @@ const HeaderForm = () => {
   const { linkString, setLinkString, isFetching } = useContext(ResultContext);
 
   useEffect(() => {
-    isFetching && setLinkString("");
+    if (isFetching) {
+      setLinkString("");
+      setLink(false);
+    }
   }, [isFetching]);
 
   return (
@@ -26,10 +29,10 @@ const HeaderForm = () => {
         name="url"
         type="url"
         value={linkString}
-        onChange={(e) => checkUrl({ e, link, setLink, setLinkString })}
+        onChange={(e) => checkUrl({ e, setLink, setLinkString })}
         placeholder="Paste playlist URL"
       />
-      {(link && linkString !== "") || linkString === "" ? (
+      {(linkString !== "" && link) || linkString === "" ? (
         ""
       ) : (
         <span>Enter a valid URL</span>

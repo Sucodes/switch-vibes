@@ -1,46 +1,23 @@
-# Getting Started with Create React App
+# Switch-Vibes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Switch-Vibes is the simplest solution for seamless music playlist migration between different music streaming platforms.
 
-## Available Scripts
+## How to use
 
-In the project directory, you can run:
+Built to be dead simple, straightforward and efficient. All it requires are 3 easy steps:
 
-### `npm start`
+- Paste in your playlist url from your favourite music streaming platform (e.g. Spotify).
+- Select the platform you wish to migrate from (source) to the platform you wish to migrate to (destination).
+- Seat back and let SwitchVibes do the heavy lifting for you in seconds.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Demo
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Still not convinced? Check it out live [here](https://switch-vibes.vercel.app/) or click [here](link to demo) to watch a demo.
 
-### `npm test`
+## Contributing
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If you come across any bugs or have ideas to improve this project, feel free to open an issue or submit a pull request.
 
-### `npm run build`
+### Show your support
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Give a &#x2605; if you like this project and you find it useful!

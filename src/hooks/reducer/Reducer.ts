@@ -7,6 +7,7 @@ export const highlightArrowInitialState: HighlightArrowProps = {
   spBtnYt: false,
   apBtnSp: false,
   apBtnYt: false,
+  pickedBtn: "",
 };
 
 export const highlightArrowReducer = (
@@ -26,6 +27,8 @@ export const highlightArrowReducer = (
       return { ...state, spBtnAp: true };
     case "yt_to_apple":
       return { ...state, ytBtnAp: true };
+    case "picked":
+      return { ...state, pickedBtn: action.payload };
     case "reset":
       return highlightArrowInitialState;
     default:

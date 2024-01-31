@@ -5,6 +5,7 @@ export type HighlightArrowProps = {
   ytBtnSp: boolean;
   apBtnYt: boolean;
   apBtnSp: boolean;
+  pickedBtn: string;
 };
 
 export type UpdateProps = {

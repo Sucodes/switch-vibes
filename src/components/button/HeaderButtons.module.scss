@@ -5,8 +5,8 @@
     width: 100%;
     display: contents;
 
-    button {
-        @include btn;
+    &>img {
+        @include imageBtn;
     }
 }
 
@@ -62,8 +62,8 @@
     @include flexCenter(row);
     justify-content: space-between;
 
-    button {
-        @include btn;
+    &>img {
+        @include imageBtn;
     }
 
     &>div {
@@ -80,15 +80,17 @@
     }
 }
 
+.active {
+    @include imageBtn;
+    background-color: #82828266;
+    box-shadow: 0px 2px 30px #505050C9;
+}
+
 @media (min-width: $md) {
     .header_buttons__top_layer {
-        button {
-            @include btn;
-
-            &>img {
-                width: 5rem;
-
-            }
+        &>img {
+            @include imageBtn;
+            width: 8em;
         }
     }
 
@@ -121,12 +123,9 @@
     }
 
     .header_buttons__bottom_layer {
-        button {
-            @include btn;
-
-            &>img {
-                width: 5rem;
-            }
+        &>img {
+            @include imageBtn;
+            width: 8em;
         }
     }
 }

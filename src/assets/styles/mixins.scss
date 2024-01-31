@@ -30,3 +30,16 @@
         background-color: #82828266;
     }
 }
+
+@mixin imageBtn {
+    border: 0.0238rem solid #505050C9;
+    border-radius: 30px;
+    padding: 0.625rem 1.5625rem;
+    cursor: pointer;
+    width: 7em;
+    object-fit: contain;
+
+    &:hover {
+        background-color: #82828266;
+    }
+}

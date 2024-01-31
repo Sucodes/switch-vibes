@@ -40,6 +40,12 @@ const HeaderButtons = () => {
     HighlightArrow(btnValue.join("_to_"), state, dispatch);
   }, [btnValue]);
 
+  const getSelectedBtn = (e: any) => {
+    let id = e.currentTarget.getAttribute("id");
+    dispatch({ type: "picked", payload: id });
+    handleBtnClick(id, setBtnValue);
+  };
+
   return (
     <>
       {isLoading || isFetching ? (
@@ -47,13 +53,13 @@ const HeaderButtons = () => {
       ) : (
         <>
           <div className={styles.header_buttons__top_layer}>
-            <button
-              onClick={(e) => {
-                handleBtnClick("yt", setBtnValue);
-              }}
-            >
-              <img src={youtube} alt="youtube music logo" />
-            </button>
+            <img
+              id="yt"
+              onClick={(e) => getSelectedBtn(e)}
+              className={state.pickedBtn === "yt" ? `${styles.active}` : ""}
+              src={youtube}
+              alt="youtube music logo"
+            />
           </div>
 
           <div className={styles.header_buttons__middle_layer}>
@@ -103,13 +109,13 @@ const HeaderButtons = () => {
           </div>
 
           <div className={styles.header_buttons__bottom_layer}>
-            <button
-              onClick={(e) => {
-                handleBtnClick("apple", setBtnValue);
-              }}
-            >
-              <motion.img src={apple} alt="apple music logo" />
-            </button>
+            <img
+              id="apple"
+              onClick={(e) => getSelectedBtn(e)}
+              className={state.pickedBtn === "apple" ? `${styles.active}` : ""}
+              src={apple}
+              alt="apple music logo"
+            />
 
             <div>
               <motion.img
@@ -130,13 +136,15 @@ const HeaderButtons = () => {
               />
             </div>
 
-            <button
-              onClick={(e) => {
-                handleBtnClick("spotify", setBtnValue);
-              }}
-            >
-              <img src={spotify} alt="spotify logo" />
-            </button>
+            <img
+              id="spotify"
+              onClick={(e) => getSelectedBtn(e)}
+              className={
+                state.pickedBtn === "spotify" ? `${styles.active}` : ""
+              }
+              src={spotify}
+              alt="spotify logo"
+            />
           </div>
         </>
       )}

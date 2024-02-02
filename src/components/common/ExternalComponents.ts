@@ -17,7 +17,6 @@ export {
 export { toast, ToastContainer } from "react-toastify";
 export { useErrorBoundary, ErrorBoundary } from "react-error-boundary";
 
-export * from "axios";
 export {
   QueryClient,
   QueryClientProvider,

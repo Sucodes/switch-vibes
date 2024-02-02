@@ -6,9 +6,9 @@ import {
   QueryClientProvider,
   // ReactQueryDevtools,
 } from "components/common/ExternalComponents";
-import { inject } from "@vercel/analytics";
+// import { inject } from "@vercel/analytics";
 
-inject();
+// inject();
 
 export const queryClient = new QueryClient();
 
